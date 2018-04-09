@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface QuestionType {
 
-    void setQuestion(String Question);
+    void setQuestion(String question);
 
     void setAnswer(ArrayList answer);
 
