@@ -1,8 +1,10 @@
-import Bridge.Questions.MultipleChoice;
-import Bridge.Questions.QuestionType;
-import Bridge.Questions.Rate;
-import Bridge.Questions.Surveys.CreateSurvey;
-import Bridge.Questions.TandF;
+package Client;
+
+import Bridge.CreateSurvey;
+import Bridge.Question.MultipleChoice;
+import Bridge.Question.Rate;
+import Bridge.Question.TandF;
+import Data.Surveys;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +12,13 @@ import java.util.Arrays;
 public class main {
 
     public static void main(final String[] args){
-        ArrayList<CreateSurvey> survey = new ArrayList<>();
+
+        Surveys surveys = new Surveys();
+        AnswerSurvey answerSurvey = new AnswerSurvey();
+
+        surveys.Attach(answerSurvey);
+
+        //ArrayList<CreateSurvey> survey = new ArrayList<>();
         ArrayList<Boolean> tf = new ArrayList<Boolean>();
         ArrayList<Integer> rate = new ArrayList<Integer>();
         ArrayList<String> mc = new ArrayList<String>();
@@ -22,18 +30,24 @@ public class main {
         CreateSurvey question1 = new CreateSurvey("Is this code awesome", tf, new TandF());
         question1.setQuestionType();
 
+        surveys.addSurvey(question1);
+
         CreateSurvey question2 = new CreateSurvey("How Cool is this code", rate, new MultipleChoice());
         question2.setQuestionType();
+
+        surveys.addSurvey(question2);
 
         CreateSurvey question3 = new CreateSurvey("What color is an orange", mc, new Rate());
         question3.setQuestionType();
 
-        survey.addAll(Arrays.asList(question1,question2,question3));
+        surveys.addSurvey(question3);
 
-        for (int i = 0; i < survey.size(); i++){
+        //survey.addAll(Arrays.asList(question1,question2,question3));
+
+        /*for (int i = 0; i < survey.size(); i++){
             System.out.println(survey.get(i).getQuestion());
             System.out.println(survey.get(i).getAnswer().toString());
-        }
+        }*/
     }
 
 }

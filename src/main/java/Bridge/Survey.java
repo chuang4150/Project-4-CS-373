@@ -1,6 +1,6 @@
-package Bridge.Questions.Surveys;
+package Bridge;
 
-import Bridge.Questions.QuestionType;
+import Bridge.Question.QuestionType;
 
 import java.util.ArrayList;
 

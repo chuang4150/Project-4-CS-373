@@ -1,4 +1,4 @@
-package Bridge.Questions;
+package Bridge.Question;
 
 import java.util.ArrayList;
 

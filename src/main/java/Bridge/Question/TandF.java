@@ -1,11 +1,11 @@
-package Bridge.Questions;
+package Bridge.Question;
 
 import java.util.ArrayList;
 
-public class Rate implements QuestionType{
+public class TandF implements QuestionType {
 
     private String question;
-    private ArrayList<Integer> answer = new ArrayList<>();
+    private ArrayList<Boolean> answer = new ArrayList<Boolean>();
 
     @Override
     public void setQuestion(String question) {
@@ -23,7 +23,7 @@ public class Rate implements QuestionType{
     }
 
     @Override
-    public ArrayList getAnswer() {
+    public ArrayList<Boolean> getAnswer() {
         return answer;
     }
 }

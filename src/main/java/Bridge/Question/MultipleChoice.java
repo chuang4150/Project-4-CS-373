@@ -1,11 +1,11 @@
-package Bridge.Questions;
+package Bridge.Question;
 
 import java.util.ArrayList;
 
-public class TandF implements QuestionType {
+public class MultipleChoice implements QuestionType {
 
     private String question;
-    private ArrayList<Boolean> answer = new ArrayList<>();
+    private ArrayList<String> answer = new ArrayList<String>();
 
     @Override
     public void setQuestion(String question) {
@@ -23,7 +23,7 @@ public class TandF implements QuestionType {
     }
 
     @Override
-    public ArrayList<Boolean> getAnswer() {
+    public ArrayList getAnswer() {
         return answer;
     }
 }

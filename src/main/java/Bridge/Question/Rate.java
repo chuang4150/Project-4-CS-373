@@ -1,11 +1,11 @@
-package Bridge.Questions;
+package Bridge.Question;
 
 import java.util.ArrayList;
 
-public class MultipleChoice implements QuestionType {
+public class Rate implements QuestionType {
 
     private String question;
-    private ArrayList<String> answer = new ArrayList<>();
+    private ArrayList<Integer> answer = new ArrayList<Integer>();
 
     @Override
     public void setQuestion(String question) {
