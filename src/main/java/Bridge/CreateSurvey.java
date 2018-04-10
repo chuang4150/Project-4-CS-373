@@ -6,11 +6,12 @@ import Observer.Subject;
 
 import java.util.ArrayList;
 
+//Refined class or implementation to create a survey with the passed question type
+
 public class CreateSurvey extends Survey{
 
     private String question;
     private ArrayList answer;
-    private ArrayList<Observer> observers;
 
     public CreateSurvey(final String question, final  ArrayList answer,
                         final QuestionType questionType){

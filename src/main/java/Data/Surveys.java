@@ -6,6 +6,8 @@ import Observer.Subject;
 
 import java.util.ArrayList;
 
+//Database for our surveys and subject of the observer, when a new survey is added to the list the observer it notified
+
 public class Surveys implements Subject{
 
     public ArrayList<CreateSurvey> surveys;

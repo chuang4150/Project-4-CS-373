@@ -9,6 +9,8 @@ import Data.Surveys;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+//Main class that sets AnswerSurvey as an observer to Surveys and create three surveys one after the other to demonstrate the observer
+
 public class main {
 
     public static void main(final String[] args){

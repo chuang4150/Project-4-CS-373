@@ -2,6 +2,8 @@ package Bridge.Question;
 
 import java.util.ArrayList;
 
+//Rating implementation
+
 public class Rate implements QuestionType {
 
     private String question;

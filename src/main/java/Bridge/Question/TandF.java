@@ -2,6 +2,8 @@ package Bridge.Question;
 
 import java.util.ArrayList;
 
+//True and False implementation
+
 public class TandF implements QuestionType {
 
     private String question;

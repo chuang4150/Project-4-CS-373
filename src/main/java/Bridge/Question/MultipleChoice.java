@@ -2,6 +2,8 @@ package Bridge.Question;
 
 import java.util.ArrayList;
 
+//Multiple Choice Implementation
+
 public class MultipleChoice implements QuestionType {
 
     private String question;

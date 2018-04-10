@@ -4,6 +4,8 @@ import Bridge.Question.QuestionType;
 
 import java.util.ArrayList;
 
+//Abstract Class for creating a survey question
+
 abstract class Survey {
 
     protected QuestionType questionType;

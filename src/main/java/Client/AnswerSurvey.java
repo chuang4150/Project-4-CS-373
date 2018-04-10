@@ -8,14 +8,14 @@ import Observer.Observer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Observer class to display to the user when there is a new survey to answer
+
 public class AnswerSurvey implements Observer {
 
-
-    private String question;
-    private ArrayList answer;
     private String response;
     Scanner scan = new Scanner(System.in);
 
+    //shows all the surveys
     public void answerAll(ArrayList<CreateSurvey> surveys){
         for (int i = 0; i < surveys.size(); i++){
             printQuestion(surveys.get(i));
@@ -24,6 +24,7 @@ public class AnswerSurvey implements Observer {
         }
     }
 
+    //shows the newest surveys
     public void answerNew(CreateSurvey survey){
         printQuestion(survey);
         printAnswer(survey);
@@ -43,6 +44,7 @@ public class AnswerSurvey implements Observer {
         response = scan.next();
     }
 
+    //when there is a new survey this is called and it shows the surveys how the user wants them (all surveys, or just the newest)
     public void update(Object o){
         if (o instanceof Surveys){
             Surveys so = (Surveys) o;
