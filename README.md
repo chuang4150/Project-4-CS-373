@@ -18,3 +18,9 @@ The Bridge pattern is represented by the QuestionType interface with the concret
 
 
 The Observer pattern is represented by the AnswerSurvey class being the Observer and the Surveys class being the Subject. Surveys acts a database for all of our surveys. When a new survey is added to the list in Surveys, AnswerSurey is notified and the code to show users the new question is run. 
+
+
+#### Tests
+
+
+The test file is located within the Question directory
