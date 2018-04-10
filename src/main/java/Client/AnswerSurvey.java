@@ -1,10 +1,9 @@
 package Client;
 
 import Bridge.CreateSurvey;
-import Bridge.Question.QuestionType;
 import Data.Surveys;
 import Observer.Observer;
-import Observer.Subject;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -47,7 +46,25 @@ public class AnswerSurvey implements Observer {
     public void update(Object o){
         if (o instanceof Surveys){
             Surveys so = (Surveys) o;
-            answerNew(so.surveys.get(so.surveys.size()-1));
+            String State = "go";
+            while (State != "stop") {
+                System.out.println("There is a new survey!, what would you like to do?");
+                System.out.println("1: See Newest Survey");
+                System.out.println("2: See All Surveys");
+                System.out.print("1 or 2: ");
+                int choice = scan.nextInt();
+                if (choice == 1) {
+                    answerNew(so.surveys.get(so.surveys.size() - 1));
+                    break;
+                }
+                if (choice == 2){
+                    answerAll(so.surveys);
+                    break;
+                }
+                else{
+                    System.out.println("Not a valid choice try again.");
+                }
+            }
         }
     }
 }

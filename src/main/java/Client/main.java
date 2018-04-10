@@ -18,7 +18,7 @@ public class main {
 
         surveys.Attach(answerSurvey);
 
-        //ArrayList<CreateSurvey> survey = new ArrayList<>();
+
         ArrayList<Boolean> tf = new ArrayList<Boolean>();
         ArrayList<Integer> rate = new ArrayList<Integer>();
         ArrayList<String> mc = new ArrayList<String>();
