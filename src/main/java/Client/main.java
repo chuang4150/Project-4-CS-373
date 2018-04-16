@@ -34,12 +34,12 @@ public class main {
 
         surveys.addSurvey(question1);
 
-        CreateSurvey question2 = new CreateSurvey("How Cool is this code", rate, new MultipleChoice());
+        CreateSurvey question2 = new CreateSurvey("How Cool is this code", mc, new MultipleChoice());
         question2.setQuestionType();
 
         surveys.addSurvey(question2);
 
-        CreateSurvey question3 = new CreateSurvey("What color is an orange", mc, new Rate());
+        CreateSurvey question3 = new CreateSurvey("What color is an orange", rate, new Rate());
         question3.setQuestionType();
 
         surveys.addSurvey(question3);

@@ -1,5 +1,7 @@
 package Bridge.Question;
 
+import Visitor.Visitor;
+
 import java.util.ArrayList;
 
 //Interface for the different kinds of questions
@@ -17,5 +19,7 @@ public interface QuestionType {
     ArrayList getAnswer();
 
     String getResponse();
+
+    Boolean accept(Visitor visitor);
 
 }

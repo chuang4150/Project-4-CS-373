@@ -2,14 +2,13 @@ package Bridge.Question;
 
 
 
-import Visitor.Visitable;
 import Visitor.Visitor;
 
 import java.util.ArrayList;
 
 //Rating implementation
 
-public class Rate implements QuestionType, Visitable {
+public class Rate implements QuestionType{
 
     private String question;
     private ArrayList<Integer> answer = new ArrayList<Integer>();

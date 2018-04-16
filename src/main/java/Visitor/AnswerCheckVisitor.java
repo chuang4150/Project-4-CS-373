@@ -4,11 +4,14 @@ import Bridge.Question.MultipleChoice;
 import Bridge.Question.Rate;
 import Bridge.Question.TandF;
 
+import java.util.ArrayList;
+
 public class AnswerCheckVisitor implements Visitor {
 
     @Override
     public Boolean visit(Rate rate) {
-        if (rate.getResponse().toLowerCase() == "true" || rate.getResponse().toLowerCase() == "false")
+        System.out.println("Rate!");
+        if (rate.getAnswer().contains(Integer.parseInt(rate.getResponse())))
             return Boolean.TRUE;
         else
             return Boolean.FALSE;
@@ -16,11 +19,19 @@ public class AnswerCheckVisitor implements Visitor {
 
     @Override
     public Boolean visit(TandF tf) {
-        return null;
+        System.out.println("True False!");
+        if (tf.getAnswer().contains(Boolean.parseBoolean(tf.getResponse())))
+            return Boolean.TRUE;
+        else
+            return Boolean.FALSE;
     }
 
     @Override
     public Boolean visit(MultipleChoice multipleChoice) {
-        return null;
+        System.out.println("Multiple Choice!");
+        if (multipleChoice.getAnswer().contains(multipleChoice.getResponse()))
+            return Boolean.TRUE;
+        else
+            return Boolean.FALSE;
     }
 }

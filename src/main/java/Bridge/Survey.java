@@ -22,4 +22,5 @@ abstract class Survey {
 
     public abstract QuestionType getQuestionType();
 
+    public abstract String getResponse();
 }

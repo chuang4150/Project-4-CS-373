@@ -44,4 +44,8 @@ public class CreateSurvey extends Survey{
     public String getResponse() {
         return response;
     }
+
+    public void setResponse(String response) {
+        questionType.setResponse(response);
+    }
 }

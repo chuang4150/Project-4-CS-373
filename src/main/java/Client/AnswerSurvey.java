@@ -1,8 +1,11 @@
 package Client;
 
 import Bridge.CreateSurvey;
+import Bridge.Question.QuestionType;
+import Bridge.Question.Rate;
 import Data.Surveys;
 import Observer.Observer;
+import Visitor.AnswerCheckVisitor;
 
 
 import java.util.ArrayList;
@@ -15,12 +18,20 @@ public class AnswerSurvey implements Observer {
     private String response;
     Scanner scan = new Scanner(System.in);
 
+    AnswerCheckVisitor answerCheckVisitor = new AnswerCheckVisitor();
+
     //shows all the surveys
     public void answerAll(ArrayList<CreateSurvey> surveys){
         for (int i = 0; i < surveys.size(); i++){
             printQuestion(surveys.get(i));
             printAnswer(surveys.get(i));
-            getResponse();
+            String response = getResponse();
+            setResponse(response, surveys.get(i));
+            if (checkAnswer(surveys.get(i)) == Boolean.TRUE)
+                System.out.println("Accepted!");
+            else
+                System.out.println("Nope");
+            setResponse("", surveys.get(i));
         }
     }
 
@@ -28,7 +39,14 @@ public class AnswerSurvey implements Observer {
     public void answerNew(CreateSurvey survey){
         printQuestion(survey);
         printAnswer(survey);
-        getResponse();
+        String response = getResponse();
+        setResponse(response, survey);
+        if (checkAnswer(survey) == Boolean.TRUE)
+            System.out.println("Accepted!");
+        else
+            System.out.println("Nope");
+            setResponse("", survey);
+
     }
 
     public void printQuestion(CreateSurvey survey){
@@ -39,9 +57,18 @@ public class AnswerSurvey implements Observer {
         System.out.println(survey.getAnswer().toString());
     }
 
-    public void getResponse(){
+    public String  getResponse(){
         System.out.print("Your Answer:");
         response = scan.next();
+        return response;
+    }
+
+    public void setResponse(String response, CreateSurvey survey){
+        survey.setResponse(response);
+    }
+
+    public Boolean checkAnswer(CreateSurvey survey){
+        return survey.getQuestionType().accept(answerCheckVisitor);
     }
 
     //when there is a new survey this is called and it shows the surveys how the user wants them (all surveys, or just the newest)

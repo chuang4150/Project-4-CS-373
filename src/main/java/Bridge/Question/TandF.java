@@ -1,13 +1,12 @@
 package Bridge.Question;
 
-import Visitor.Visitable;
 import Visitor.Visitor;
 
 import java.util.ArrayList;
 
 //True and False implementation
 
-public class TandF implements QuestionType, Visitable {
+public class TandF implements QuestionType {
 
     private String question;
     private ArrayList<Boolean> answer = new ArrayList<Boolean>();

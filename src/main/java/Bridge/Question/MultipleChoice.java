@@ -1,13 +1,12 @@
 package Bridge.Question;
 
-import Visitor.Visitable;
 import Visitor.Visitor;
 
 import java.util.ArrayList;
 
 //Multiple Choice Implementation
 
-public class MultipleChoice implements QuestionType, Visitable {
+public class MultipleChoice implements QuestionType {
 
     private String question;
     private ArrayList<String> answer = new ArrayList<String>();
