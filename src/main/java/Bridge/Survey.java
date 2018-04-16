@@ -20,4 +20,6 @@ abstract class Survey {
 
     public abstract void setQuestionType();
 
+    public abstract QuestionType getQuestionType();
+
 }

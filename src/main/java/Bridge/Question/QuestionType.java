@@ -10,8 +10,12 @@ public interface QuestionType {
 
     void setAnswer(ArrayList answer);
 
+    void setResponse(String response);
+
     String getQuestion();
 
     ArrayList getAnswer();
+
+    String getResponse();
 
 }

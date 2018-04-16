@@ -12,18 +12,21 @@ public class CreateSurvey extends Survey{
 
     private String question;
     private ArrayList answer;
+    private String response;
 
     public CreateSurvey(final String question, final  ArrayList answer,
                         final QuestionType questionType){
         super(questionType);
         this.question = question;
         this.answer = answer;
+        this.response = "";
         //setQuestionType();
     }
 
     public void setQuestionType(){
         questionType.setQuestion(question);
         questionType.setAnswer(answer);
+        questionType.setResponse(response);
     }
 
     public String getQuestion(){
@@ -34,6 +37,11 @@ public class CreateSurvey extends Survey{
         return questionType.getAnswer();
     }
 
+    public QuestionType getQuestionType() {
+        return questionType;
+    }
 
-
+    public String getResponse() {
+        return response;
+    }
 }
