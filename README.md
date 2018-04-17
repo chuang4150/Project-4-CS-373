@@ -16,4 +16,5 @@ The Visitor pattern is represented by the Visitor interface with the AnswerCheck
 ### Mediator Pattern
 
 
-The Observer pattern is represented by the AnswerSurvey class being the Observer and the Surveys class being the Subject. Surveys acts a database for all of our surveys. When a new survey is added to the list in Surveys, AnswerSurey is notified and the code to show users the new question is run. 
+The Mediator pattern is represented by the Mediator interface and SurveyMediator class. The implementation shifts the interaction between the CreateSurvey class to the SurveyMediator class. So if you were to change the implementation of how the program interacts with the different QuestionType classes, you would not need to modify createSurvey but instead make changes to the mediator.
+
