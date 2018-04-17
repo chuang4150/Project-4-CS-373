@@ -4,6 +4,8 @@ import Bridge.CreateSurvey;
 import Bridge.Question.QuestionType;
 import Bridge.Survey;
 
+//Interface for our Mediator
+
 import java.util.ArrayList;
 
 public interface Mediator {

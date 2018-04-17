@@ -6,7 +6,7 @@ import Mediator.Mediator;
 import java.util.ArrayList;
 import java.util.Observer;
 
-//Abstract Class for creating a survey question
+//Abstract Class for creating a survey question takes a mediator to handle survey interaction
 
 public abstract class Survey {
 

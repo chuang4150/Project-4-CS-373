@@ -6,6 +6,8 @@ import Bridge.Survey;
 import java.util.ArrayList;
 import java.util.List;
 
+//Implmenation of our mediator for Survey
+
 public class SurveyMediator implements Mediator {
 
 
