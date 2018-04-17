@@ -1,13 +1,18 @@
-package Bridge.Question;
-
 import Bridge.CreateSurvey;
+import Bridge.Question.MultipleChoice;
+import Bridge.Question.Rate;
+import Bridge.Question.TandF;
 import Data.Surveys;
-import org.junit.jupiter.api.Test;
+import Mediator.Mediator;
+import Mediator.SurveyMediator;
+import org.junit.Test;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static junit.framework.TestCase.assertEquals;
+
 
 class QuestionTypeTest {
 
@@ -23,15 +28,17 @@ class QuestionTypeTest {
         rate.addAll(Arrays.asList(1, 2, 3, 4, 5));
         mc.addAll(Arrays.asList("Orange", "Pink", "Red"));
 
-        CreateSurvey question1 = new CreateSurvey("Is this code awesome", tf, new TandF());
+        Mediator mediator = new SurveyMediator();
+
+        CreateSurvey question1 = new CreateSurvey("Is this code awesome", tf, new TandF(), mediator);
         question1.setQuestionType();
 
 
-        CreateSurvey question2 = new CreateSurvey("How Cool is this code", rate, new MultipleChoice());
+        CreateSurvey question2 = new CreateSurvey("How Cool is this code", rate, new MultipleChoice(), mediator);
         question2.setQuestionType();
 
 
-        CreateSurvey question3 = new CreateSurvey("What color is an orange", mc, new Rate());
+        CreateSurvey question3 = new CreateSurvey("What color is an orange", mc, new Rate(), mediator);
         question3.setQuestionType();
 
         survey.addAll(Arrays.asList(question1, question2, question3));
