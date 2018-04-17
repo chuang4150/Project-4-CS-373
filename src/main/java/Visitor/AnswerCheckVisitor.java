@@ -6,6 +6,8 @@ import Bridge.Question.TandF;
 
 import java.util.ArrayList;
 
+//Visitor Impl to take the different questiontype classes and check the input to the right question type 
+
 public class AnswerCheckVisitor implements Visitor {
 
     @Override
