@@ -10,7 +10,7 @@ For our Project 4, we implemented the Visitor and Mediator pattern within an exa
 ### Visitor Pattern
 
 
-The Visitor pattern is represented by the Visitor interface with the AnswerCheckVisitor class. The Visitor class checks wherther or not the survey response the user inputted through the console is a valid response. EX. If the survey is under the rating category, then the visitor class would check if the user input a single response of within the range of (1-5). The Visitor interface would then allow for the visitiation of these survey classes to enforce these checks. The Vistor takes our three questiontypes and will execute the right method depending on which questiontype class is passed to it because polymorphism is awesome.  
+The Visitor pattern is represented by the Visitor interface with the AnswerCheckVisitor class. The Visitor class checks whether or not the survey response the user inputted through the console is a valid response. EX. If the survey is under the rating category, then the visitor class would check if the user input a single response of within the range of (1-5). The Visitor interface would then allow for the visitiation of these survey classes to enforce these checks. The Vistor takes our three questiontypes and will execute the right method depending on which questiontype class is passed to it because polymorphism is awesome.  
 
 
 ### Mediator Pattern
