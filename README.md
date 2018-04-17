@@ -1,7 +1,7 @@
 # Project-4-COMP373
 
 
-For our Project 4, we implemented the Visitor and Mediator pattern within an example of a survey/form program with a command line interface. This program emulates a survey being updated with three new questions one after the other. Each time you answer a question a you will be notified of a new survey and given the option to answer all the surveys or just the newest one. The three question types are True & False, Rating and multiple choice.
+For our Project 4, we implemented the Visitor and Mediator pattern within an example of a survey/form program with a command line interface. This program emulates a survey being updated with three new questions one after the other. Each time you answer a question a you will be notified of a new survey and given the option to answer all the surveys or just the newest one. The three question types are True & False, Rating and multiple choice. To show the Vistor at work we also display which visitor method ran to check the input and if the input was valid or not.
 
 
 ## Our project solution is located within the src/main/java directory.
