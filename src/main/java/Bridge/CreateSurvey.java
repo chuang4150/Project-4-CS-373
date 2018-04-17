@@ -1,6 +1,7 @@
 package Bridge;
 
 import Bridge.Question.QuestionType;
+import Mediator.Mediator;
 import Observer.Observer;
 import Observer.Subject;
 
@@ -15,8 +16,8 @@ public class CreateSurvey extends Survey{
     private String response;
 
     public CreateSurvey(final String question, final  ArrayList answer,
-                        final QuestionType questionType){
-        super(questionType);
+                        final QuestionType questionType, final Mediator mediator){
+        super(questionType, mediator);
         this.question = question;
         this.answer = answer;
         this.response = "";
@@ -24,28 +25,22 @@ public class CreateSurvey extends Survey{
     }
 
     public void setQuestionType(){
-        questionType.setQuestion(question);
-        questionType.setAnswer(answer);
-        questionType.setResponse(response);
+        mediator.setQuestionType(question,answer,response,questionType);
     }
 
     public String getQuestion(){
-        return questionType.getQuestion();
+        return mediator.getQuestion(questionType);
     }
 
     public ArrayList getAnswer() {
-        return questionType.getAnswer();
+        return mediator.getAnswer(questionType);
     }
 
     public QuestionType getQuestionType() {
-        return questionType;
-    }
-
-    public String getResponse() {
-        return response;
+        return mediator.getQuestionType(questionType);
     }
 
     public void setResponse(String response) {
-        questionType.setResponse(response);
+        mediator.setResponse(response, questionType);
     }
 }

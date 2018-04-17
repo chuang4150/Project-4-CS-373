@@ -3,20 +3,24 @@ package Client;
 import Bridge.CreateSurvey;
 import Bridge.Question.QuestionType;
 import Bridge.Question.Rate;
+import Bridge.Survey;
 import Data.Surveys;
+import Mediator.Mediator;
 import Observer.Observer;
 import Visitor.AnswerCheckVisitor;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //Observer class to display to the user when there is a new survey to answer
 
-public class AnswerSurvey implements Observer {
+public class AnswerSurvey implements Observer{
 
     private String response;
     Scanner scan = new Scanner(System.in);
+    private List<Survey> surveys;
 
     AnswerCheckVisitor answerCheckVisitor = new AnswerCheckVisitor();
 
@@ -96,4 +100,5 @@ public class AnswerSurvey implements Observer {
             }
         }
     }
+
 }

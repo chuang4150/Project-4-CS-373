@@ -5,6 +5,8 @@ import Bridge.Question.MultipleChoice;
 import Bridge.Question.Rate;
 import Bridge.Question.TandF;
 import Data.Surveys;
+import Mediator.Mediator;
+import Mediator.SurveyMediator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +19,7 @@ public class main {
 
         Surveys surveys = new Surveys();
         AnswerSurvey answerSurvey = new AnswerSurvey();
+        Mediator mediator = new SurveyMediator();
 
         surveys.Attach(answerSurvey);
 
@@ -29,20 +32,26 @@ public class main {
         rate.addAll(Arrays.asList(1,2,3,4,5));
         mc.addAll(Arrays.asList("Orange","Pink","Red"));
 
-        CreateSurvey question1 = new CreateSurvey("Is this code awesome", tf, new TandF());
+        CreateSurvey question1 = new CreateSurvey("Is this code awesome", tf, new TandF(), mediator);
         question1.setQuestionType();
+
 
         surveys.addSurvey(question1);
 
-        CreateSurvey question2 = new CreateSurvey("How Cool is this code", mc, new MultipleChoice());
+
+        CreateSurvey question2 = new CreateSurvey("How Cool is this code", mc, new MultipleChoice(), mediator);
         question2.setQuestionType();
+
 
         surveys.addSurvey(question2);
 
-        CreateSurvey question3 = new CreateSurvey("What color is an orange", rate, new Rate());
+
+        CreateSurvey question3 = new CreateSurvey("What color is an orange", rate, new Rate(), mediator);
         question3.setQuestionType();
 
+
         surveys.addSurvey(question3);
+
 
         //survey.addAll(Arrays.asList(question1,question2,question3));
 

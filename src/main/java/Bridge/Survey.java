@@ -1,17 +1,21 @@
 package Bridge;
 
 import Bridge.Question.QuestionType;
+import Mediator.Mediator;
 
 import java.util.ArrayList;
+import java.util.Observer;
 
 //Abstract Class for creating a survey question
 
-abstract class Survey {
+public abstract class Survey {
 
     protected QuestionType questionType;
+    protected Mediator mediator;
 
-    protected Survey(final QuestionType questionType){
+    protected Survey(final QuestionType questionType, Mediator mediator){
         this.questionType = questionType;
+        this.mediator = mediator;
     }
 
     public abstract String getQuestion();
@@ -22,5 +26,7 @@ abstract class Survey {
 
     public abstract QuestionType getQuestionType();
 
-    public abstract String getResponse();
+    public abstract void setResponse(String response);
+
+
 }
